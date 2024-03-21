@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'django-insecure-k17cwje(s*=yuv%utb)&(%($q!6(f6f49_64nj2^(+#$*$qf8@
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -39,8 +37,23 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'courses',
     'ckeditor',
-    'ckeditor_uploader'
+    'ckeditor_uploader',
+    'rest_framework',
 ]
+
+CKEDITOR_UPLOAD_PATH = "ckeditor/images"
+
+AUTH_USER_MODEL = 'courses.User'
+
+MEDIA_ROOT = '%s/courses/static/' % BASE_DIR
+
+import cloudinary
+
+cloudinary.config(
+    cloud_name="dd0qzygo7",
+    api_key="544345494632949",
+    api_secret="rsMExum_c-Ga0DTQOfB92R0aONw"
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -72,17 +85,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ecourseapi.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'coursedb',
+        'USER': 'root',
+        'PASSWORD': 'Abc111!',
+        'HOST': ''  # mặc định localhost
     }
 }
 
+import pymysql
+
+pymysql.install_as_MySQLdb()
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -102,7 +120,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -113,7 +130,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
