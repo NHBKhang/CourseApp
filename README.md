@@ -1,1 +1,1 @@
-# CourseApp
+# Course App
