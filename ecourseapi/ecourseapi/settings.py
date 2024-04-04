@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'rest_framework',
+    'oauth2_provider',
 ]
 
 CKEDITOR_UPLOAD_PATH = "ckeditor/images"

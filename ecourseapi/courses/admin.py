@@ -1,8 +1,6 @@
 from django.contrib import admin
 from django.utils.html import mark_safe
-
 from courses.models import Course, Category, Like, Lesson, User, Tag, Comment
-
 from courses.forms import CourseForm
 
 
