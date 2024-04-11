@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "CourseMobileApp",
+    "slug": "CourseMobileApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "CourseMobileApp"
+}
