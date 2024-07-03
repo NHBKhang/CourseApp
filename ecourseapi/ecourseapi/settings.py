@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-k17cwje(s*=yuv%utb)&(%($q!6(f6f49_64nj2^(+#$*$qf8@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['10.0.2.2', '127.0.0.1']
 
 # Application definition
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'rest_framework',
     'oauth2_provider',
+    'drf_yasg'
 ]
 
 CKEDITOR_UPLOAD_PATH = "ckeditor/images"
